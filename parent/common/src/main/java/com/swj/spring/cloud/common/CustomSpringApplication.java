@@ -31,15 +31,13 @@ public class CustomSpringApplication {
 	private static String[] addDefaultProfile(String[] args) {
 		String[] newArgs = new String[args.length + 1];
 		for (int i = 0; i < args.length; i++) {
-			if (args[i].startsWith(SPRING_PROFILES_ACTIVE)) {
+			if (args[i].startsWith("--" + SPRING_PROFILES_ACTIVE)) {
 				return args;
 			}
 			newArgs[i] = args[i];
 		}
-		newArgs[args.length] = SPRING_PROFILES_ACTIVE + "=dev";
+		newArgs[args.length] = "--" + SPRING_PROFILES_ACTIVE + "=dev";
 		return newArgs;
-		// List<String> argList = Arrays.asList(args);
-		// argList.forEach((arg)->arg.equals("")?args:);
 
 	}
 

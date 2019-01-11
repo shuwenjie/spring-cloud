@@ -1,0 +1,16 @@
+server: 
+  port: 8081
+  undertow:
+    worker-threads: 32
+        
+spring:
+  application:
+    name: provider
+    
+eureka: 
+  instance:
+    appname: provider
+    hostname: 127.0.0.1
+  client: 
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8000/eureka/
