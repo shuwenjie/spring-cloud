@@ -1,3 +1,14 @@
 /target/
-.DS_store
+/target/*
+/.settings/
+/.settings/**
+/.metadata/
+/.metadata/**
+/.recommenders/
+/.recommenders/**
+/Servers/
+/Servers/**
+.DS_Store
+.project
+.classpath
 *.prefs
