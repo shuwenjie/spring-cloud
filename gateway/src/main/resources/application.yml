@@ -4,6 +4,22 @@ server:
     worker-threads: 32
         
 spring: 
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  cloud:
+    gateway: 
+      routes:
+      - id: my-test
+        uri:
+        predicates:
+        - Path=*
+        filters: 
+        - name: RequestRateLimiter
+          args: 
+            redis-rate-limiter.replenishRate: 0
+            redis-rate-limiter.burstCapacity: 20
+            key-resolver: "#{@userLimit}"
   application:
     name: gateway
     

@@ -2,7 +2,8 @@ package com.swj.spring.cloud.gateway.router;
 
 import java.util.List;
 
-import org.jboss.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,12 +15,13 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
+import com.swj.spring.cloud.gateway.flow.FlowFunctionConfig;
 import com.swj.spring.cloud.gateway.service.TestService;
 
 @Configuration
 public class RouterFunctionConfig {
 
-	Logger logger = Logger.getLogger(RouterFunctionConfig.class);
+	Logger logger = LoggerFactory.getLogger(FlowFunctionConfig.class);
 
 	@Autowired
 	StringRedisTemplate redis;
@@ -39,6 +41,7 @@ public class RouterFunctionConfig {
 	public RouterFunction<ServerResponse> checkRouter() {
 		return RouterFunctions.route(request -> {
 			logger.info("current thread is " + Thread.currentThread());
+			System.out.println("check head");
 			List<String> keyHeader = request.headers().header("Authorization");
 			if (keyHeader == null || keyHeader.size() == 0 || !keyHeader.get(0).equals("cloud")) {
 				return true;
