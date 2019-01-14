@@ -8,7 +8,12 @@
 /.recommenders/**
 /Servers/
 /Servers/**
+/.mvn/
+/.mvn/**
+/LOG_PATH*/
+/LOG_PTH*/**
 .DS_Store
 .project
 .classpath
+.springBeans
 *.prefs
