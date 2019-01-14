@@ -17,15 +17,14 @@ public class FlowFunctionConfig {
 	@Bean
 	public KeyResolver userLimit() {
 		
-		logger.info("limit begin");
-		System.out.println("limit begin");
-		
 		return new KeyResolver() {
 
 			@Override
 			public Mono<String> resolve(ServerWebExchange exchange) {
 				// TODO Auto-generated method stub
-				String name = exchange.getRequest().getQueryParams().getFirst("name");
+				
+				logger.info("limit begin");
+				String name = exchange.getRequest().getRemoteAddress().getHostName();
 				return name.length() == 0 ? Mono.just("default") : Mono.just(name);
 			}
 		};

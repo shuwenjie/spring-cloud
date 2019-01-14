@@ -11,18 +11,20 @@ spring:
     gateway: 
       routes:
       - id: my-test
-        uri:
+        uri: http://123
         predicates:
         - Path=*
         filters: 
         - name: RequestRateLimiter
           args: 
-            redis-rate-limiter.replenishRate: 0
+            redis-rate-limiter.replenishRate: 1
             redis-rate-limiter.burstCapacity: 20
             key-resolver: "#{@userLimit}"
   application:
     name: gateway
     
-
+logging:
+  path: /tmp/log/
+  file: gateway.log
 
   

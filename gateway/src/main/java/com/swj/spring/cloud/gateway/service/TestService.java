@@ -19,10 +19,10 @@ public class TestService {
 	StringRedisTemplate redis;
 
 	public Mono<JSONObject> getDemo(ServerRequest request) {
-		logger.info("current thread is " + Thread.currentThread() + " ");
+//		logger.info("current thread is " + Thread.currentThread() + " ");
 		JSONObject json = new JSONObject();
 		json.put("path", request.path());
-		json.put("name", redis.opsForValue().get("name"));
+//		json.put("name", redis.opsForValue().get("name"));
 		return Mono.just(json);
 	}
 

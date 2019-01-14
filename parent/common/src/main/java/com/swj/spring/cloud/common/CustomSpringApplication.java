@@ -16,10 +16,18 @@ public class CustomSpringApplication {
 		String location = "";
 		if (startedParams.containsProperty(SPRING_CONFIG_LOCATION)) {
 			location = startedParams.getProperty(SPRING_CONFIG_LOCATION);
+			String[] newArgs = new String[args.length - 1];
+			int index = 0;
+			for (int i = 0; i < args.length; i++) {
+				if (!args[i].startsWith("--" + SPRING_CONFIG_LOCATION)) {
+					newArgs[index++] = args[i];
+				}
+			}
+			args = newArgs;
 		}
 		if (startedParams.containsProperty(SPRING_PROFILES_ACTIVE)) {
-			location = "classpath:/,classpath:/" + startedParams.getProperty(SPRING_PROFILES_ACTIVE) + "/"
-					+ (location.length() == 0 ? "" : "," + location);
+			location = (location.length() == 0 ? "" : location + ",") + "classpath:/,classpath:/"
+					+ startedParams.getProperty(SPRING_PROFILES_ACTIVE) + "/";
 
 		}
 		System.setProperty("spring.config.location", location);
