@@ -1,0 +1,2 @@
+logging:
+  config: file:/Users/apple/Work/Workspace/github/spring-cloud/config/logback.xml
