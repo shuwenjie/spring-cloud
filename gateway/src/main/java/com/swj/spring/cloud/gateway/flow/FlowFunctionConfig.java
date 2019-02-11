@@ -9,7 +9,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 import reactor.core.publisher.Mono;
 
-@Configuration
+//@Configuration
 public class FlowFunctionConfig {
 	
 	Logger logger = LoggerFactory.getLogger(FlowFunctionConfig.class);

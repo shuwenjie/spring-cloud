@@ -14,6 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- spring boot 版本控制 -->
 		<spring-boot.version>2.0.5.RELEASE</spring-boot.version>
+		<spring-boot-starter-actuator.version>${spring-boot.version}</spring-boot-starter-actuator.version>
 		<!-- eureka 版本控制 -->
 		<spring-cloud-starter-eureka-server.version>1.4.5.RELEASE</spring-cloud-starter-eureka-server.version>
 		<spring-cloud-starter-netflix-eureka-client.version>2.0.1.RELEASE</spring-cloud-starter-netflix-eureka-client.version>
@@ -45,6 +46,15 @@
 
 	<dependencyManagement>
 		<dependencies>
+
+			<!-- spring boot version -->
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-actuator</artifactId>
+				<version>${spring-boot-starter-actuator.version}</version>
+			</dependency>
+
 			<!-- eureka server and client -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>

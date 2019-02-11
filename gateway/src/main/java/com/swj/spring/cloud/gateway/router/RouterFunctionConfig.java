@@ -40,7 +40,7 @@ public class RouterFunctionConfig {
 	public RouterFunction<ServerResponse> checkRouter() {
 		return RouterFunctions.route(request -> {
 //			logger.info("current thread is " + Thread.currentThread());
-			logger.info("check head");
+//			logger.info("check head");
 			List<String> keyHeader = request.headers().header("Authorization");
 			if (keyHeader == null || keyHeader.size() == 0 || !keyHeader.get(0).equals("cloud")) {
 				return true;
@@ -61,5 +61,4 @@ public class RouterFunctionConfig {
 		// ServerResponse.ok().body(BodyInserters.fromObject(service.getDemo().block()))
 		);
 	}
-
 }
