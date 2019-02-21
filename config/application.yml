@@ -1,2 +1,14 @@
 logging:
   config: file:/Users/apple/Work/Workspace/github/spring-cloud/config/logback.xml
+
+spring: 
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+
+

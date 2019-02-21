@@ -24,6 +24,7 @@
 		<spring-data-keyvalue.version>2.1.0.RELEASE</spring-data-keyvalue.version>
 		<spring-boot-starter-data-redis.version>${spring-boot.version}</spring-boot-starter-data-redis.version>
 		<spring-boot-starter-data-redis-reactive.version>${spring-boot.version}</spring-boot-starter-data-redis-reactive.version>
+		<spring-boot-starter-data-mongodb.version>${spring-boot.version}</spring-boot-starter-data-mongodb.version>
 		<!-- spring gateway 版本控制 -->
 		<spring-cloud-starter-gateway.version>2.0.1.RELEASE</spring-cloud-starter-gateway.version>
 		<!-- spring security 版本控制 -->
@@ -97,6 +98,13 @@
 				<artifactId>spring-boot-starter-data-redis-reactive</artifactId>
 				<version>${spring-boot-starter-data-redis-reactive.version}</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-mongodb</artifactId>
+				<version>${spring-boot-starter-data-mongodb.version}</version>
+			</dependency>
+
 
 
 

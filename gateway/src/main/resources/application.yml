@@ -10,6 +10,11 @@ spring:
     gateway: 
       default-filters:
       - name: ipLimit
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: logDB
     
 logging:
   path: /tmp/log/
