@@ -51,10 +51,14 @@
 				%logger{50}:[%line] %msg%n</pattern>
 		</encoder>
 	</appender>
+    
+    <appender name="MONGO" class="com.swj.spring.cloud.gateway.log.mongo.MongoDBAppender">
+        <host>127.0.0.2</host>
+    </appender>
 
 	<root>
 		<level value="INFO" />
-		<appender-ref ref="STDOUT" />
+		<appender-ref ref="MONGO" />
 		<appender-ref ref="FILE" />
 	</root>
 </configuration>  
